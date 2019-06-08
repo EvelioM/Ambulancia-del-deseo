@@ -8,6 +8,7 @@
         <title>{{config('app.name', 'Ambulancia del deseo')}}</title>
     </head>
     <body>
+        <script src="{{asset('js/app.js')}}"></script>
         @include('inc.navbar')
         <main class="container">
             @yield('content')
