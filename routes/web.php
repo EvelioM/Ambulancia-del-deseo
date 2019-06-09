@@ -13,4 +13,7 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::resource('deseos', 'DeseoController');
+Route::resource('deseos', 'DeseosController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
