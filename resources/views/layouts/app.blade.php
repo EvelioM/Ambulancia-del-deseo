@@ -11,6 +11,7 @@
         <script src="{{asset('js/app.js')}}"></script>
         @include('inc.navbar')
         <main class="container">
+            @include('inc.messages')
             @yield('content')
         </main>
     </body>

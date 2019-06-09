@@ -16,16 +16,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-<<<<<<< HEAD:ambulancia/app/User.php
-        'name', 'email', 'password',
-=======
         'name',
         'email',
         'password',
         'status',
-        'is_active',
-        
->>>>>>> fa8a15f322b014bdc2fafdb942cfdb9910ce15e8:app/User.php
+        'is_active',    
     ];
 
     /**
@@ -45,4 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function wish()
+    {
+        return $this->hasOne('App\Deseo');
+    }
+
+    public function work()
+    {
+        return $this->belongsToMany('App\Deseo');
+    }
 }

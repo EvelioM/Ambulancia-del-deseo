@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'PagesController@index');
+
+Route::resource('deseos', 'DeseoController');
