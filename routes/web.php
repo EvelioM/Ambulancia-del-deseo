@@ -12,6 +12,11 @@
 */
 
 Route::get('/', 'PagesController@index');
+Route::get('/fundacion', 'PagesController@laFundacion');
+Route::get('/noticias', 'PagesController@noticias');
+Route::get('/patrocinadores', 'PagesController@patrocinadores');
+Route::get('/donar', 'PagesController@donar');
+Route::get('/contacto', 'PagesController@contacto');
 
 Route::resource('deseos', 'DeseosController');
 Auth::routes();
