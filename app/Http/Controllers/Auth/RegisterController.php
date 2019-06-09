@@ -71,7 +71,7 @@ class RegisterController extends Controller
                 'surname' => $data['surname'],
                 'phone' => $data['phone'],
                 'is_admin'=> false,
-                'is_patient'=> true,
+                'is_solicitor'=> true,
                 'is_volunteer'=> false,
             ]);  
         }elseif($data['role']=='volunteer'){
@@ -82,7 +82,7 @@ class RegisterController extends Controller
                 'surname' => $data['surname'],
                 'phone' => $data['phone'],
                 'is_admin'=> false,
-                'is_patient'=> false,
+                'is_solicitor'=> false,
                 'is_volunteer'=> true,
             ]);
         }

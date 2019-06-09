@@ -29,4 +29,8 @@ class PagesController extends Controller
     public function patrocinadores(){
         return view('pages.patrocinadores');
     }
+
+    public function solicitarDeseo(){
+        return view('pages.solicitarDeseo');
+    }
 }

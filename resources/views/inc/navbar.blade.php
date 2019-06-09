@@ -33,7 +33,7 @@
                         @if (Auth::user()->is_admin)
                             <a class="dropdown-item" href="#">Algo de admin</a>
                         @endif   
-                        @if (Auth::user()->is_patient)
+                        @if (Auth::user()->is_solicitor)
                             <a class="dropdown-item" href="#">Solicitar deseo</a>
                         @endif  
                         @if (Auth::user()->is_volunteer)

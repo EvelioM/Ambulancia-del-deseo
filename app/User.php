@@ -20,7 +20,7 @@ class User extends Authenticatable
         'email',
         'surname',
         'phone',
-        'is_patient',
+        'is_solicitor',
         'is_admin',
         'is_volunteer',
         'password',

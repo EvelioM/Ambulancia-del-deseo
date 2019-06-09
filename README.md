@@ -6,7 +6,7 @@ Este proyecto consiste en crear una página web para la **Ambulancia del deseo**
 
 ## Modelo
 
-Hemos diseñado el siguiente Digrama Entidad-Relación para modelar los datos de nuestro sistema.
+Hemos diseñado el siguiente Diagrama Entidad-Relación para modelar los datos de nuestro sistema.
 
 <p align="center"><img src="docImg/WishER.svg"></p>
 

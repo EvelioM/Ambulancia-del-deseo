@@ -14,7 +14,7 @@ class DeseosController extends Controller
      */
     public function index()
     {
-        $deseos = Deseo::all();
+        $deseos = Deseo::orderBy('created_at','desc')->paginate(10);
         return view('deseos.index')->with('deseos', $deseos);
     }
 
@@ -47,7 +47,8 @@ class DeseosController extends Controller
      */
     public function show($id)
     {
-        //
+        $deseo = Deseo::find($id);
+        return view('deseos.show')->with('deseo', $deseo);
     }
 
     /**
