@@ -37,7 +37,7 @@
                             <a class="dropdown-item" href="/deseos/create">Solicitar deseo</a>
                         @endif  
                         @if (Auth::user()->is_volunteer)
-                            <a class="dropdown-item" href="#">Algo de voluntario</a>
+                            <a class="dropdown-item" href="/dates">Seleccionar fechas disponibles</a>
                         @endif   
                     </div>
                 </li>
