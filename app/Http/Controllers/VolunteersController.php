@@ -17,18 +17,31 @@ class VolunteersController extends Controller
             {
             foreach ($data as $key => $value) 
             {
-                $events[] = Calendar::event(
-                    $value->title,
-                    true,
-                    new \DateTime($value->start_date),
-                    new \DateTime($value->end_date.'+1 day'),
-                    null,
-                    // Add color
-                    [
-                        'color' => '#61D800',
-                        'textColor' => '#FFFFFF',
-                    ]
-                );
+                if($value->title == 'Disponible'){
+                    $events[] = Calendar::event(
+                        $value->title,
+                        true,
+                        new \DateTime($value->start_date),
+                        new \DateTime($value->end_date.'+1 day'),
+                        null,
+                        // Add color
+                        ['color' => '#61D800',
+                        'textColor' => '#FFFFFF',]
+                    );        
+                }else{
+                    $events[] = Calendar::event(
+                        $value->title,
+                        true,
+                        new \DateTime($value->start_date),
+                        new \DateTime($value->end_date.'+1 day'),
+                        null,
+                        // Add color
+                        ['color' => '#C62828',
+                        'textColor' => '#FFFFFF',]
+                    );
+                    
+                }
+               
             }
         }
         $calendar = Calendar::addEvents($events);

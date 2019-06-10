@@ -9,6 +9,7 @@ use App\Event;
 use App\Patient;
 use App\PatientData;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
+use Carbon\Carbon;
 
 class DeseosController extends Controller
 {
@@ -97,11 +98,11 @@ class DeseosController extends Controller
     public function assignResources($id)
     {
         $deseo = Deseo::find($id);
-        $events = Event::where('end_date', '<', $deseo->last_day)->orderBy('end_date')->take(10)->get();
+        $events = Event::where('start_date', '<', $deseo->last_day)->orderBy('end_date')->take(10)->get();
         $colors = ['#8C9EFF', '#8E24AA','#4CAF50','#00796B','#F4511E'];
         $text = ['#000000'.'#FFFFFF'];
         $volunteers = User::whereHas('events', function($query) use($deseo){
-            $query->where('end_date', '<', $deseo->last_day);  
+            $query->where('start_date', '<=', $deseo->last_day);  
         })->get();
 
         
@@ -160,10 +161,37 @@ class DeseosController extends Controller
         $deseo->save();
 
         foreach ($volunteers as $key => $vol) {
-            $evento = Event::where([['id_volunteer', $vol->id],
-                ['start_date', 'BEFORE', $deseo->scheduled+1],
-                ['end_date', 'AFTER', $deseo->scheduled-1]])->first();
+            $evento = Event::where('id_volunteer', $vol->id)
+                ->whereDate('start_date', '<=', $deseo->scheduled_day)
+                ->whereDate('end_date', '>=', $deseo->scheduled_day)->first();
             if ($evento) {
+                if($evento->start_date < $deseo->scheduled_day){
+                    $eventoAntes = new Event;
+                    $eventoAntes->title='Disponible';
+                    $eventoAntes->start_date = $evento->start_date;
+                    $newEndDate = new Carbon($deseo->scheduled_day);
+                    $newEndDate->subDays(1);
+                    $eventoAntes->end_date = $newEndDate;
+                    $eventoAntes->id_volunteer = $evento->id_volunteer;
+                    $eventoAntes->save();
+                }
+                if($evento->end_date > $deseo->scheduled_day){
+                    $eventoDespues = new Event;
+                    $eventoDespues->title='Disponible';
+                    $newStartDate = new Carbon($deseo->scheduled_day);
+                    $newStartDate->addDays(1);
+                    $eventoDespues->start_date = $newStartDate;
+                    $eventoDespues->end_date = $evento->end_date;
+                    $eventoDespues->id_volunteer = $evento->id_volunteer;
+                    $eventoDespues->save();
+                }
+
+                $eventoEntonces = new Event;
+                $eventoEntonces->title='Deseo de '.$deseo->patient->name.' '.$deseo->patient->surname;
+                $eventoEntonces->start_date = $deseo->scheduled_day;
+                $eventoEntonces->end_date = $deseo->scheduled_day;
+                $eventoEntonces->id_volunteer = $evento->id_volunteer;
+                $eventoEntonces->save();
                 $evento->delete();
             }
         }
