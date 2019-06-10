@@ -25,6 +25,11 @@ Route::get('/deseos/{deseo}', 'DeseosController@show');
 
 Route::get('/dates', 'VolunteersController@index');
 Route::post('/event/add', 'VolunteersController@addEvent');
+Route::get('/deseos/assign/{deseo}', 'DeseosController@assignResources');
+Route::post('/deseos/grant', 'DeseosController@grant');
+Route::delete('/deseos/destroy/{id}', 'DeseosController@destroy');
+Route::get('/deseos/approve/{id}', 'DeseosController@approve');
+Route::get('/deseos/finish/{id}', 'DeseosController@end');
 
 Auth::routes();
 

@@ -25,8 +25,8 @@ class VolunteersController extends Controller
                     null,
                     // Add color
                     [
-                        'color' => '#000000',
-                        'textColor' => '#008000',
+                        'color' => '#61D800',
+                        'textColor' => '#FFFFFF',
                     ]
                 );
             }

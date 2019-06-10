@@ -16,13 +16,13 @@
                     <div class="col-md-4 col-sm-4">
                         <div class="btn-group-vertical">
                             @if($deseo->state == 'unapproved')
-                            <a href="#" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Pendiente de aprobación</a>
+                            <a href="/deseos/{{$deseo->id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Pendiente de aprobación</a>
                             @endif
                             @if($deseo->state == 'approved')
-                            <a href="#" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Aprobado</a>
+                            <a href="/deseos/assign/{{$deseo->id}}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Aprobado</a>
                             @endif
                             @if($deseo->state == 'granted')
-                            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Concedido</a>
+                            <a href="/deseos/{{$deseo->id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Concedido</a>
                             @endif
                             @if($deseo->state == 'done')
                             <a href="#" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Realizado</a>
@@ -33,7 +33,7 @@
             </div>
             <br>
         @endforeach
-        {{$deseos->links()}}
+        
     @else
         <p>No hay deseos.</p>
     @endif

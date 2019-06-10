@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Deseo;
+use App\User;
+use App\Event;
 use App\Patient;
 use App\PatientData;
+use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 
 class DeseosController extends Controller
 {
@@ -16,7 +19,7 @@ class DeseosController extends Controller
      */
     public function index()
     {
-        $deseos = Deseo::orderBy('created_at','desc')->paginate(10);
+        $deseos = Deseo::orderBy('created_at','desc')->get();
         return view('deseos.index')->with('deseos', $deseos);
     }
 
@@ -91,29 +94,106 @@ class DeseosController extends Controller
         return view('deseos.show')->with('deseo', $deseo);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function assignResources($id)
     {
-        //
+        $deseo = Deseo::find($id);
+        $events = Event::where('end_date', '<', $deseo->last_day)->orderBy('end_date')->take(10)->get();
+        $colors = ['#8C9EFF', '#8E24AA','#4CAF50','#00796B','#F4511E'];
+        $text = ['#000000'.'#FFFFFF'];
+        $volunteers = User::whereHas('events', function($query) use($deseo){
+            $query->where('end_date', '<', $deseo->last_day);  
+        })->get();
+
+        
+        
+        $jsEvent = [];
+        $i = 0;
+        if($events->count())
+            {
+            foreach ($events as $event) 
+            {
+                $jsEvents[] = Calendar::event(
+                    $event->title.': '.$event->volunteer->name.' '.$event->volunteer->surname,
+                    true,
+                    new \DateTime($event->start_date),
+                    new \DateTime($event->end_date.'+1 day'),
+                    null,
+                    // Add color
+                    [
+                        'color' => $colors[$event->volunteer->id%6],
+                        'textColor' => $text[$event->volunteer->id%2],
+                    ]
+                );
+            }
+        }
+        $jsEvents[] = Calendar::event(
+            'Posibles fechas para cumplir el deseo',
+            true,
+            new \DateTime(),
+            new \DateTime($deseo->last_day),
+            null,
+            // Add color
+            [
+                'color' => '#B71C1C',
+                'textColor' => '#FFFFFF',
+            ]
+        );
+
+        $calendar = Calendar::addEvents($jsEvents);
+
+        return view('deseos.assign', ['deseo' => $deseo, 'calendar' => $calendar, 'volunteers' => $volunteers,]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function grant(Request $request)
     {
-        //
+        $deseo = Deseo::find($request->input('deseo_id'));
+        $deseo->scheduled_day = $request->input('scheduled');
+        $deseo->state = 'granted';
+        $vol_ids = $request->input('volunteers');
+        $volunteers = [];
+
+        foreach ($vol_ids as $key => $id) {
+            $volunteers[$key] = User::find($id);
+            $deseo->volunteers()->attach($id);
+        }
+
+        $deseo->save();
+
+        foreach ($volunteers as $key => $vol) {
+            $evento = Event::where([['id_volunteer', $vol->id],
+                ['start_date', 'BEFORE', $deseo->scheduled+1],
+                ['end_date', 'AFTER', $deseo->scheduled-1]])->first();
+            if ($evento) {
+                $evento->delete();
+            }
+        }
+
+        $deseos = Deseo::orderBy('created_at','desc')->get();
+        return view('deseos.index')->with('deseos', $deseos);
     }
 
+    public function approve($id)
+    {
+
+        $deseo = Deseo::find($id);
+        $deseo->state = 'approved';
+        $deseo->save();
+
+        $deseos = Deseo::orderBy('created_at','desc')->get();
+        return view('deseos.index')->with('deseos', $deseos);
+    }
+
+    public function end($id)
+    {
+
+        $deseo = Deseo::find($id);
+        $deseo->state = 'done';
+        $deseo->save();
+
+        $deseos = Deseo::orderBy('created_at','desc')->get();
+        return view('deseos.index')->with('deseos', $deseos);
+    }
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -122,6 +202,10 @@ class DeseosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deseo = Deseo::find($id);
+        $deseo->delete();
+
+        $deseos = Deseo::orderBy('created_at','desc')->get();
+        return view('deseos.index')->with('deseos', $deseos);
     }
 }

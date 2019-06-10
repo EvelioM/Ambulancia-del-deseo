@@ -8,6 +8,6 @@ class Event extends Model
 {
     public function volunteer()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User', 'id_volunteer');
     }
 }
