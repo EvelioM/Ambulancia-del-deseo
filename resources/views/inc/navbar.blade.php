@@ -31,10 +31,10 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownGestion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestión</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownGestion">
                         @if (Auth::user()->is_admin)
-                            <a class="dropdown-item" href="#">Algo de admin</a>
+                            <a class="dropdown-item" href="/deseos">Ver deseos</a>
                         @endif   
                         @if (Auth::user()->is_solicitor)
-                            <a class="dropdown-item" href="#">Solicitar deseo</a>
+                            <a class="dropdown-item" href="/deseos/create">Solicitar deseo</a>
                         @endif  
                         @if (Auth::user()->is_volunteer)
                             <a class="dropdown-item" href="#">Algo de voluntario</a>

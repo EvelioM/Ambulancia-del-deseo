@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Deseo;
+use App\Patient;
+use App\PatientData;
 
 class DeseosController extends Controller
 {
@@ -25,7 +27,7 @@ class DeseosController extends Controller
      */
     public function create()
     {
-        //
+        return view('deseos.create');
     }
 
     /**
@@ -36,7 +38,45 @@ class DeseosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Create the patient
+        $patient = new Patient;
+        $patient->name = $request->input('name');
+        $patient->surname = $request->input('surname');
+        $patient->gender = $request->input('gender');
+        $patient->birthday = $request->input('birthday');
+
+        $patient->save();
+
+        // Create patient data
+        $pd = new PatientData;
+        $pd->patient_id = $patient->id;
+        $pd->address = $request->input('address');
+        $pd->floor = $request->input('floor'); 
+        $pd->has_elevator = boolval($request->input('elevator'));
+        $pd->postal_code = $request->input('postal_code');
+        $pd->city = $request->input('city');
+        $pd->province = $request->input('province');
+        $pd->phone = $request->input('phone');
+        $pd->weight = $request->input('weight');
+        $pd->private_health_insurance = boolval($request->input('insurance'));
+        $pd->has_previous_instructions = boolval($request->input('previous_instructions'));
+        $pd->movility = $request->input('movility');
+        $pd->situation = $request->input('situation');
+        
+        $pd->save();
+
+        // Create the wish
+        $wish = new Deseo;
+        $wish->state = 'unapproved';
+        $wish->patient_id = $patient->id;
+        $wish->solicitor_id = auth()->user()->id;
+        $wish->descr = $request->input('wish');
+        $wish->last_day = $request->input('last_day');
+        
+        $wish->save();
+
+        return view('deseos.exito');
+        
     }
 
     /**
