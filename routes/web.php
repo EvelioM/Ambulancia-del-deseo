@@ -34,6 +34,8 @@ Route::get('/deseos/finish/{id}', 'DeseosController@end');
 Route::get('/usuarios', 'AdminsController@index');
 Route::post('/usuarios/{usuario}', 'AdminsController@changePriv');
 
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
