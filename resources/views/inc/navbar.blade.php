@@ -32,6 +32,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownGestion">
                         @if (Auth::user()->is_admin)
                             <a class="dropdown-item" href="/deseos">Ver deseos</a>
+                            <a class="dropdown-item" href="/usuarios">Ver usuarios</a>
                         @endif   
                         @if (Auth::user()->is_solicitor)
                             <a class="dropdown-item" href="/deseos/create">Solicitar deseo</a>

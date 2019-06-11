@@ -31,6 +31,9 @@ Route::delete('/deseos/destroy/{id}', 'DeseosController@destroy');
 Route::get('/deseos/approve/{id}', 'DeseosController@approve');
 Route::get('/deseos/finish/{id}', 'DeseosController@end');
 
+Route::get('/usuarios', 'AdminsController@index');
+Route::post('/usuarios/{usuario}', 'AdminsController@changePriv');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
