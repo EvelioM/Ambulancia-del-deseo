@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <a class="navbar-brand" href="{{ url('/') }}">Ambulancia del deseo</a>    
+    <a class="navbar-brand" href="{{ url('/') }}">@lang('lang.ambulancia')</a>    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDeseo" 
             aria-controls="navbarDeseo" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,36 +9,36 @@
     <div class="collapse navbar-collapse justify-content-md-center" id="navbarDeseo">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Inicio</a>
+                <a class="nav-link" href="/">@lang('lang.home')</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/fundacion">La Fundación</a>
+                <a class="nav-link" href="/fundacion">@lang('lang.foundation')</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/noticias">Noticias</a>
+                <a class="nav-link" href="/noticias">@lang('lang.news')</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/patrocinadores">Patrocinadores</a>
+                <a class="nav-link" href="/patrocinadores">@lang('lang.sponsors')</a>
             </li>
             <li class="nav-item active">
-                    <a class="nav-link" href="/donar">Donar</a>
+                    <a class="nav-link" href="/donar">@lang('lang.donate')</a>
             </li>
             <li class="nav-item active">
-                    <a class="nav-link" href="/contacto">Solicitar contacto</a>
+                    <a class="nav-link" href="/contacto">@lang('lang.contact')</a>
             </li>
             @if (!Auth::guest())
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownGestion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestión</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownGestion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@lang('lang.manage')</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownGestion">
                         @if (Auth::user()->is_admin)
-                            <a class="dropdown-item" href="/deseos">Ver deseos</a>
-                            <a class="dropdown-item" href="/usuarios">Ver usuarios</a>
+                            <a class="dropdown-item" href="/deseos">@lang('lang.show-wishes')</a>
+                            <a class="dropdown-item" href="/usuarios">@lang('lang.show-users')</a>
                         @endif   
                         @if (Auth::user()->is_solicitor)
-                            <a class="dropdown-item" href="/deseos/create">Solicitar deseo</a>
+                            <a class="dropdown-item" href="/deseos/create">@lang('lang.make-wish')</a>
                         @endif  
                         @if (Auth::user()->is_volunteer)
-                            <a class="dropdown-item" href="/dates">Seleccionar fechas disponibles</a>
+                            <a class="dropdown-item" href="/dates">@lang('lang.select-dates')</a>
                         @endif   
                     </div>
                 </li>
@@ -64,11 +64,11 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">@lang('lang.login')</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">@lang('lang.register')</a>
                         </li>
                     @endif
                 @else
@@ -81,7 +81,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Cerrar sesión') }}
+                                {{ __('lang.logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
