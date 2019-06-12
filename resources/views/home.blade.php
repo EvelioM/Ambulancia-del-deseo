@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Bienvenido</div>
+                <div class="card-header">@lang('lang.welcome')</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Bienvenido a la Ambulancia del Deseo.
+                    @lang('lang.welcometo')
                 </div>
             </div>
         </div>

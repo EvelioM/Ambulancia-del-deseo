@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Event;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 use Carbon\Carbon;
+use App;
 
 class VolunteersController extends Controller
 {
@@ -20,7 +21,7 @@ class VolunteersController extends Controller
             {
                 if($value->title == 'Disponible'){
                     $events[] = Calendar::event(
-                        $value->title,
+                        __('lang.'.$value->title),
                         true,
                         new \DateTime($value->start_date),
                         new \DateTime($value->end_date.'+1 day'),
@@ -45,7 +46,9 @@ class VolunteersController extends Controller
                
             }
         }
-        $calendar = Calendar::addEvents($events);
+        $calendar = Calendar::addEvents($events)->setOptions([ //set fullcalendar options
+            'locale' => App::getLocale()
+        ]);
         return view('volunteers.calendar', compact('calendar'));
     }
 

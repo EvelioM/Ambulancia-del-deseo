@@ -10,6 +10,7 @@ use App\Patient;
 use App\PatientData;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 use Carbon\Carbon;
+use App;
 
 class DeseosController extends Controller
 {
@@ -113,22 +114,37 @@ class DeseosController extends Controller
             {
             foreach ($events as $event) 
             {
-                $jsEvents[] = Calendar::event(
-                    $event->title.': '.$event->volunteer->name.' '.$event->volunteer->surname,
-                    true,
-                    new \DateTime($event->start_date),
-                    new \DateTime($event->end_date.'+1 day'),
-                    null,
-                    // Add color
-                    [
-                        'color' => $colors[$event->volunteer->id%6],
-                        'textColor' => $text[$event->volunteer->id%2],
-                    ]
-                );
+                if($event->title == 'Disponible'){
+                    $jsEvents[] = Calendar::event(
+                        __('lang.'.$event->title).': '.$event->volunteer->name.' '.$event->volunteer->surname,
+                        true,
+                        new \DateTime($event->start_date),
+                        new \DateTime($event->end_date.'+1 day'),
+                        null,
+                        // Add color
+                        [
+                            'color' => $colors[$event->volunteer->id%6],
+                            'textColor' => $text[$event->volunteer->id%2],
+                        ]
+                    );
+                }else{
+                    $jsEvents[] = Calendar::event(
+                        $event->title,
+                        true,
+                        new \DateTime($event->start_date),
+                        new \DateTime($event->end_date.'+1 day'),
+                        null,
+                        // Add color
+                        [
+                            'color' => $colors[$event->volunteer->id%6],
+                            'textColor' => $text[$event->volunteer->id%2],
+                        ]
+                    );
+                }
             }
         }
         $jsEvents[] = Calendar::event(
-            'Posibles fechas para cumplir el deseo',
+            __('lang.possibledates'),
             true,
             new \DateTime(),
             new \DateTime($deseo->last_day),
@@ -140,7 +156,9 @@ class DeseosController extends Controller
             ]
         );
 
-        $calendar = Calendar::addEvents($jsEvents);
+        $calendar = Calendar::addEvents($jsEvents)->setOptions([ //set fullcalendar options
+            'locale' => App::getLocale()
+        ]);
 
         return view('deseos.assign', ['deseo' => $deseo, 'calendar' => $calendar, 'volunteers' => $volunteers,]);
     }

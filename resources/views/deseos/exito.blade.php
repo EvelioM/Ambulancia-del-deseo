@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Deseo solicitado con éxito</h1>
+    <h1>@lang('lang.wish-success')</h1>
     <br>
-    <p>Nuestro equipo está analizandolo.</p>
+    <p>@lang('lang.checking')</p>
 @endsection

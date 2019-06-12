@@ -10,7 +10,7 @@
             @endif
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2>Días disponibles</h2>
+                <h2>@lang('lang.availables')</h2>
             </div>
             <div class="panel-body" >
                 {!! $calendar->calendar() !!}
@@ -19,8 +19,8 @@
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/locale-all.js"></script>
     {!! $calendar->script() !!}
     <div class="container">
         <br/>
@@ -31,7 +31,7 @@
             <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <strong> El día: </strong>  
+                <strong> @lang('lang.onday') </strong>  
                 <input class="date form-control"  type="date" id="scheduled" name="scheduled">   
             </div>
         </div>
@@ -57,12 +57,12 @@
             <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <button type="submit" class="btn btn-success">Asignar</button>
+                <button type="submit" class="btn btn-success">@lang('lang.assign')</button>
             </div>
             </div>
         </form>
         @else
-            <p>No hay voluntarios disponibles.</p>
+            <p>@lang('lang.novolavailable')</p>
         @endif
 
         
