@@ -57,6 +57,7 @@
             </div>
             <br>
         @endforeach
+        {{$users->links()}}
         
     @else
         <p>@lang('lang.nousers')</p>

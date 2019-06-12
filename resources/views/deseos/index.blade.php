@@ -33,6 +33,7 @@
             </div>
             <br>
         @endforeach
+        {{$deseos->links()}}
         
     @else
         <p>@lang('lang.nowishes')</p>

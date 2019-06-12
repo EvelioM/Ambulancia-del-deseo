@@ -14,6 +14,12 @@ use App;
 
 class DeseosController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +27,11 @@ class DeseosController extends Controller
      */
     public function index()
     {
-        $deseos = Deseo::orderBy('created_at','desc')->get();
+        if(!auth()->user()->is_admin){
+            return redirect('/');
+        }
+
+        $deseos = Deseo::orderBy('created_at','desc')->paginate(5);
         return view('deseos.index')->with('deseos', $deseos);
     }
 
@@ -32,6 +42,10 @@ class DeseosController extends Controller
      */
     public function create()
     {
+        if(!auth()->user()->is_solicitor){
+            return redirect('/');
+        }
+
         return view('deseos.create');
     }
 
@@ -43,6 +57,10 @@ class DeseosController extends Controller
      */
     public function store(Request $request)
     {
+        if(!auth()->user()->is_solicitor){
+            return redirect('/');
+        }
+
         // Create the patient
         $patient = new Patient;
         $patient->name = $request->input('name');
@@ -92,12 +110,20 @@ class DeseosController extends Controller
      */
     public function show($id)
     {
+        if(!auth()->user()->is_admin){
+            return redirect('/');
+        }
+
         $deseo = Deseo::find($id);
         return view('deseos.show')->with('deseo', $deseo);
     }
 
     public function assignResources($id)
     {
+        if(!auth()->user()->is_admin){
+            return redirect('/');
+        }
+
         $deseo = Deseo::find($id);
         $events = Event::where('start_date', '<', $deseo->last_day)->orderBy('end_date')->take(10)->get();
         $colors = ['#8C9EFF', '#8E24AA','#4CAF50','#00796B','#F4511E'];
@@ -165,6 +191,10 @@ class DeseosController extends Controller
 
     public function grant(Request $request)
     {
+        if(!auth()->user()->is_admin){
+            return redirect('/');
+        }
+
         $deseo = Deseo::find($request->input('deseo_id'));
         $deseo->scheduled_day = $request->input('scheduled');
         $deseo->state = 'granted';
@@ -220,6 +250,9 @@ class DeseosController extends Controller
 
     public function approve($id)
     {
+        if(!auth()->user()->is_admin){
+            return redirect('/');
+        }
 
         $deseo = Deseo::find($id);
         $deseo->state = 'approved';
@@ -231,6 +264,9 @@ class DeseosController extends Controller
 
     public function end($id)
     {
+        if(!auth()->user()->is_admin){
+            return redirect('/');
+        }
 
         $deseo = Deseo::find($id);
         $deseo->state = 'done';
@@ -248,6 +284,10 @@ class DeseosController extends Controller
      */
     public function destroy($id)
     {
+        if(!auth()->user()->is_admin){
+            return redirect('/');
+        }
+
         $deseo = Deseo::find($id);
         $deseo->delete();
 

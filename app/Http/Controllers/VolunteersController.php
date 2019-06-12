@@ -11,8 +11,17 @@ use App;
 class VolunteersController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
+        if(!auth()->user()->is_volunteer){
+            return redirect('/');
+        }
+
         $events = [];
         $data = auth()->user()->events;
         if($data->count())
@@ -54,6 +63,9 @@ class VolunteersController extends Controller
 
     public function addEvent(Request $request)
     {
+        if(!auth()->user()->is_volunteer){
+            return redirect('/');
+        }
 
         if($request->input('tipo') == 'concreto'){
 

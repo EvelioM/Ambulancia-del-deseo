@@ -7,14 +7,28 @@ use App\User;
 
 class AdminsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-        $users = User::where('id', '<>', auth()->user()->id)->get();
+        if(!auth()->user()->is_admin){
+            return redirect('/');
+        }
+
+        $users = User::where('id', '<>', auth()->user()->id)->paginate(10);
         return view('users.index')->with('users', $users);
     }
 
     public function changePriv(Request $request, $id)
     {
+        if(!auth()->user()->is_admin){
+            return redirect('/');
+        }
+
         $user = User::find($id);
         if($request->input('is_admin')){
             $user->is_admin = true;
