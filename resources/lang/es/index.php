@@ -19,3 +19,8 @@ return array (
     'key' => 'value'
     
 );
+/*
+<h1>Index</h1>
+{!! __('index.hello')!!}
+@lang('index.hola')
+*/
