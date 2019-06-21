@@ -35,3 +35,23 @@ En esta página contamos con 3 tipos de usuarios:
 * **Voluntario**: introduce las horas que tiene disponibles para ayudar con deseos.
 
 * **Solicitante**: es quien solicita los deseos para él o un tercero.
+
+## Instalación
+
+### Servidor
+
+Para la instalación de la página se debe descargar este repositorio a la carpeta raiz del servidor. Una vez hecho esto modificamos el archivo *.env* para que los parámetros de la base de datos coincidan con la nuestra.
+
+A continuación levantamos y creamos nuestra base de datos y dentro de la carpeta *ambulancia* lanzamos el siguiente comando
+
+```bash
+php artisan migrate
+```
+
+Esto crea las tablas necesarias y añade un usuario administrador cuyo e-mail es **admin@deseos.com** y su contraseña es **admin**. Esto es necesario para poder hacer que otro usuario sea administrador, que debería hacerse registrandose con cualquier rol y dandole el de admin a través de este.
+
+Ahora que la base de datos está bien podemos levantar nuestro servidor y acceder en la dirección *localhost/ambulancia/public* suponiendo que la carpeta raiz está mapeada a *localhost*.
+
+### Artisan serve
+
+Otra forma de ver la página sería realizar todo lo anteriormente mencionado para tener lista la base de datos y usar ```php artisan serve``` para levantar un servidor de desarrollo en el puerto 8000.
