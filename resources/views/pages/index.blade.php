@@ -87,10 +87,10 @@
                                     <img class="d-block w-100" alt="Carousel Bootstrap First" src="https://ambulanciadeldeseo.es/wp-content\uploads\2018\10\banner-contacto-ambulancia-del-deseo.jpg" />
                                     <div class="carousel-caption">
                                         <h4>
-                                                Energía solidaria
+                                            {!! __('index.energia')!!}
                                         </h4>
                                         <p>
-                                                Donde lo imposible se hace realidad
+                                            {!! __('index.imposible')!!}
                                         </p>
                                     </div>
                                 </div>
@@ -98,10 +98,11 @@
                                     <img class="d-block w-100" alt="Carousel Bootstrap Second" src="https://ambulanciadeldeseo.es/wp-content\uploads\2018\10\fondo-slide1-inicio-ambulancia-del-deseo.jpg" />
                                     <div class="carousel-caption">
                                         <h4>
-                                                Energía solidaria
+                                            {!! __('index.energia')!!}
+                                            
                                         </h4>
                                         <p>
-                                                Donde lo imposible se hace realidad
+                                            {!! __('index.imposible')!!}
                                         </p>
                                     </div>
                                 </div>
@@ -122,28 +123,28 @@
                 
                 <div class="column">
                         <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">
-                                1. Contacta con nosotros</h1>
+                            {!! __('index.1')!!}</h1>
                         <div class="col-md-12">
-                                <p style="text-align: center;margin-bottom: 8px">A través de cualquiera de nuestros medios, por redes sociales, a través del <a href="/contacto/">formulario de contacto</a>&nbsp;o escribiendo directamente un correo electrónico a la dirección de <a href="mailto:info@ambulanciadeldeseo.es">info@ambulanciadeldeseo.es</a>.</p>
+                                <p style="text-align: center;margin-bottom: 8px">{!! __('index.1.1')!!}</p>
                         </div>
                 </div>
                 
                 <div class="column">
                         <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">
-                                2. Estudiamos la viabilidad</h1>
+                            {!! __('index.2')!!}</h1>
                         <div class="col-md-12">
                                 <p style="text-align: center;margin-bottom: 8px">
-                                        Nos gustaría cumplir todos y cada uno de los deseos que nos llegan, por eso estudiamos la viabilidad de cada uno para ver si se pueden o no se pueden hacer. Los deseos los realizamos de manera gratuita.
+                                    {!! __('index.2.1')!!}      
                                 </p>
                         </div>
                 </div>
                 
                 <div class="column">
                         <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">
-                                3. Hacemos tu deseo realidad</h1>
+                            {!! __('index.3')!!}</h1>
                         <div class="col-md-12">
                                 <p style="text-align: center;margin-bottom: 8px">
-                                        Contamos con un equipo de profesionales sanitarios y voluntarios dispuestos a ayudarte. Si es viable es que se puede hacer, y vaya si lo hacemos…
+                                    {!! __('index.3.1')!!}
                                 </p>
                         </div>
                 </div>
@@ -166,9 +167,9 @@
                 
                 <div class="row" >
                         <div class="columnSingle">
-                                <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">Escucha La Entrevista</h1>
+                                <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">{!! __('index.entrevista')!!}</h1>
                     <div class="col-md-12">
-                            <p style="text-align: center;margin-bottom: 8px">Hace poco Onda Vasca entrevistaba a Manuel Pardo, una de las figuras clave de la Fundación, descubre qué piensa la gente cuando sus deseos se cumplen contado por ellos mismos.</p>
+                            <p style="text-align: center;margin-bottom: 8px">{!! __('index.hace')!!}</p>
                     </div>
                         </div>
                     
@@ -200,14 +201,12 @@
                 <div class="columnTwo">
                         <br><br><br><br><br><br>
                         <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">
-                                Mario, el osito de los deseos.</h1><br><br>
+                            {!! __('index.mario')!!}</h1><br><br>
                         <h2 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">
-                                Pequeños gestos, grandes cosas.</h2>
+                            {!! __('index.peque')!!}</h2>
                                 <br><br>
                         <div class="col-md-12">
-                                <p style="text-align: center;margin-bottom: 8px">Si Mario te visita es que tu deseo se va a hacer realidad.
-
-                                        Es la figura que representa la filosofía y el modo de ver las cosas de la Fundación. Mario es conductor de Ambulancia, una figura clave para poder desplazar a las personas que quieren cumplir su deseo.</p>
+                                <p style="text-align: center;margin-bottom: 8px">{!! __('index.si')!!}</p>
                         </div>
                 </div>
                 
