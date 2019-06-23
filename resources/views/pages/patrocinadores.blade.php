@@ -96,7 +96,8 @@
             <div class="columnFour">
 
                 <div class="img-box" style="display: block;margin-left: auto;margin-right: auto;">
-                    <a href="https://www.vialta.es/" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="486" height="354" src="https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Vialta-ambulancia-del-deseo.png" class="vc_single_image-img attachment-full" alt="logo Vialta" srcset="https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Vialta-ambulancia-del-deseo.png 486w, https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Vialta-ambulancia-del-deseo-300x219.png 300w" sizes="(max-width: 486px) 100vw, 486px">                    <div class="overlay">
+                    <a href="https://www.vialta.es/" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="486" height="354" src="https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Vialta-ambulancia-del-deseo.png" class="vc_single_image-img attachment-full" alt="logo Vialta" srcset="https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Vialta-ambulancia-del-deseo.png 486w, https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Vialta-ambulancia-del-deseo-300x219.png 300w" sizes="(max-width: 486px) 100vw, 486px">                   
+                         <div class="overlay">
                     <div class="text">UCAM</div>
                 </div></a>
                 </div>&nbsp;
@@ -104,21 +105,24 @@
             </div>
             <div class="columnFour">
                 <div class="img-box" style="display: block;margin-left: auto;margin-right: auto;">
-                    <a href="https://www.mesadelcastillo.com/" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="486" height="354" src="https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Hospital-Mesa-del-Castillo-ambulancia-del-deseo.png" class="vc_single_image-img attachment-full" alt="logo Hospital Mesa del Castillo" srcset="https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Hospital-Mesa-del-Castillo-ambulancia-del-deseo.png 486w, https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Hospital-Mesa-del-Castillo-ambulancia-del-deseo-300x219.png 300w" sizes="(max-width: 486px) 100vw, 486px">                    <div class="overlay">
+                    <a href="https://www.mesadelcastillo.com/" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="486" height="354" src="https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Hospital-Mesa-del-Castillo-ambulancia-del-deseo.png" class="vc_single_image-img attachment-full" alt="logo Hospital Mesa del Castillo" srcset="https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Hospital-Mesa-del-Castillo-ambulancia-del-deseo.png 486w, https://ambulanciadeldeseo.es/wp-content/uploads/2019/02/logo-Hospital-Mesa-del-Castillo-ambulancia-del-deseo-300x219.png 300w" sizes="(max-width: 486px) 100vw, 486px">                    
+                        <div class="overlay">
                     <div class="text">SUECOS</div>
                 </div></a>
                 </div>&nbsp;
             </div>
             <div class="columnFour">
                     <div class="img-box" style="display: block;margin-left: auto;margin-right: auto;">
-                        <a href="https://smartcommunication.es" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="486" height="354" src="https://ambulanciadeldeseo.es/wp-content/uploads/2018/10/logo-patrocinadores-Smart-Communication-ambulancia-del-deseo.jpg" class="vc_single_image-img attachment-full" alt="logo Smart Communication" srcset="https://ambulanciadeldeseo.es/wp-content/uploads/2018/10/logo-patrocinadores-Smart-Communication-ambulancia-del-deseo.jpg 486w, https://ambulanciadeldeseo.es/wp-content/uploads/2018/10/logo-patrocinadores-Smart-Communication-ambulancia-del-deseo-300x219.jpg 300w" sizes="(max-width: 486px) 100vw, 486px">                        <div class="overlay">
+                        <a href="https://smartcommunication.es" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="486" height="354" src="https://ambulanciadeldeseo.es/wp-content/uploads/2018/10/logo-patrocinadores-Smart-Communication-ambulancia-del-deseo.jpg" class="vc_single_image-img attachment-full" alt="logo Smart Communication" srcset="https://ambulanciadeldeseo.es/wp-content/uploads/2018/10/logo-patrocinadores-Smart-Communication-ambulancia-del-deseo.jpg 486w, https://ambulanciadeldeseo.es/wp-content/uploads/2018/10/logo-patrocinadores-Smart-Communication-ambulancia-del-deseo-300x219.jpg 300w" sizes="(max-width: 486px) 100vw, 486px">                       
+                             <div class="overlay">
                         <div class="text">HEFAME</div>
                     </div></a>
                     </div>&nbsp;
                 </div>
             <div class="columnFour">
                     <div class="img-box" style="display: block;margin-left: auto;margin-right: auto;">
-                        <a href="https://www.ucam.edu/" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="486" height="354" src="https://ambulanciadeldeseo.es/wp-content/uploads/2018/11/logo-colaboradores-UCAM-ambulancia-del-deseo-1.jpg" class="vc_single_image-img attachment-full" alt="logo UCAM" srcset="https://ambulanciadeldeseo.es/wp-content/uploads/2018/11/logo-colaboradores-UCAM-ambulancia-del-deseo-1.jpg 486w, https://ambulanciadeldeseo.es/wp-content/uploads/2018/11/logo-colaboradores-UCAM-ambulancia-del-deseo-1-300x219.jpg 300w" sizes="(max-width: 486px) 100vw, 486px">                        <div class="overlay">
+                        <a href="https://www.ucam.edu/" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="486" height="354" src="https://ambulanciadeldeseo.es/wp-content/uploads/2018/11/logo-colaboradores-UCAM-ambulancia-del-deseo-1.jpg" class="vc_single_image-img attachment-full" alt="logo UCAM" srcset="https://ambulanciadeldeseo.es/wp-content/uploads/2018/11/logo-colaboradores-UCAM-ambulancia-del-deseo-1.jpg 486w, https://ambulanciadeldeseo.es/wp-content/uploads/2018/11/logo-colaboradores-UCAM-ambulancia-del-deseo-1-300x219.jpg 300w" sizes="(max-width: 486px) 100vw, 486px">                        
+                            <div class="overlay">
                         <div class="text">BELÉN GUGU</div>
                     </div></a>
                     </div>&nbsp;
