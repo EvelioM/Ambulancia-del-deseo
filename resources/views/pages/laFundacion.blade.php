@@ -65,60 +65,85 @@
             float: left;
             width: 50%;
             }
+            .columnSingle {
+            float: left;
+            position: relative;
+            left: 12.5%;
+            width: 75%;
+            }
         </style>
     </head>
     <body>
 
+        <div class="row" >
+            <div class="columnSingle">
+                    <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px;font-size: 500%">{!! __('fundacion.la')!!}</h1>
+            </div>                   
+        </div>
+        <br><br>
+        <div class="row" >
+            <div class="columnSingle">
+                    <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">{!! __('fundacion.origen')!!}</h1>
+                <div class="col-md-12">
+                        <p style="text-align: center;margin-bottom: 8px">{!! __('fundacion.escuchar')!!}</p>
+                </div>
+            </div>                   
+        </div>
+
+
+    
+
+        <br><br>
+        <div class="row">
+                
+                <div class="columnTwo">
+                        <br><br><br>
+                        
+                        <div class="col-md-12">
+                                <p style="text-align: center;margin-bottom: 8px">{!! __('fundacion.en')!!}</p>
+                        </div>
+                </div>
+                
+                <div class="columnTwo">
+                        <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img alt="Bootstrap Image Preview" src="https://ambulanciadeldeseo.es/wp-content/uploads/2018/10/la-fundacion-Kees-Veldboer-ambulancia-del-deseo-768x502.png" class="img-fluid"  />
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                
+                    
+                    
+                    
+            </div>
             <br><br>
             <div class="row">
                     
+                <div class="columnTwo">
+                    <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img alt="Bootstrap Image Preview" src="https://ambulanciadeldeseo.es/wp-content/uploads/2018/10/la-fundacion-los-fundadores-ambulancia-del-deseo-768x508.png" class="img-fluid"  />
+                                </div>
+                            </div>
+                        </div>
+                 </div>
                     <div class="columnTwo">
                             <br><br><br>
                             
                             <div class="col-md-12">
-                                    <p style="text-align: center;margin-bottom: 8px">{!! __('fundacion.en')!!}</p>
+                                    <p style="text-align: center;margin-bottom: 8px">{!! __('fundacion.los')!!}</p>
                             </div>
                     </div>
-                    
-                    <div class="columnTwo">
-                            <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <img alt="Bootstrap Image Preview" src="https://ambulanciadeldeseo.es/wp-content/uploads/2018/10/la-fundacion-Kees-Veldboer-ambulancia-del-deseo-768x502.png" class="img-fluid"  />
-                                        </div>
-                                    </div>
-                                </div>
-                    </div>
-                    
-                        
-                        
-                        
+                                       
                 </div>
+            <br><br>
 
-
-                <br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+       
             <div class="row" >
-                    <div class="column">
+                    <div class="columnSingle">
                             <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">{!! __('fundacion.patronato')!!}</h1>
                 <div class="col-md-12">
                         <p style="text-align: center;margin-bottom: 8px;">{!! __('fundacion.ponemos')!!}</p>
@@ -176,7 +201,7 @@
 
 
             <div class="row" >
-                    <div class="column">
+                    <div class="columnSingle">
                             <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">{!! __('fundacion.equipo')!!}</h1>
                 <div class="col-md-12">
                         <p style="text-align: center;margin-bottom: 8px;">{!! __('fundacion.para')!!}</p>
