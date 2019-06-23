@@ -1,9 +1,9 @@
 <?php 
 return array ( 
     'si' => 'Si quieres contactar con la Fundación escribe un email a:
-    info@ambulanciadeldeseo.es
+    info@ambulanciadeldeseo.es<br>
     
-    Si estás interesado en algún tipo de colaboración y quieres dejar documentación física, pasa por:
+    Si estás interesado en algún tipo de colaboración y quieres dejar documentación física, pasa por:<br>
     
     JM Sánchez Pedreño, 1. Planta 4º Izquierda
     30009 – Murcia',

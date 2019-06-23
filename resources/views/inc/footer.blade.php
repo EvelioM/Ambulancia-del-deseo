@@ -10,13 +10,14 @@
             </div><div id="email-subscribers-2" class="widget mkd-footer-column-1 widget_text elp-widget"><h5 class="mkd-footer-widget-title">{!! __('footer.subscribe')!!}</h5>        <div class="es_form_container">
                 <form class="es_widget_form" data-es_form_id="es_widget_form">
                                                     <div class="es_lablebox">
-                        <label class="es_widget_form_email">Email *</label>
+                        <label class="es_widget_form_email">E-mail</label>
                     </div>
                     <div class="es_textbox">
                         <input type="email" id="es_txt_email" class="es_textbox_class" name="es_txt_email" value="" maxlength="60" required="">
-                    </div>
+                    </div><br>
+                    
                                     <div class="es_button">
-                        <input type="submit" id="es_txt_button" class="es_textbox_button es_submit_button" name="es_txt_button" value="Suscribirse">
+                        <input type="submit" id="es_txt_button" class="es_textbox_button es_submit_button" name="es_txt_button" value="{!! __('footer.suscribirse')!!}">
                     </div>
                     <div class="es_msg" id="es_widget_msg">
                         <span id="es_msg"></span>
