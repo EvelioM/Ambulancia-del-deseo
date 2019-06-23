@@ -7,27 +7,8 @@
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-       <style>
-    
-        .columnFour {
-        float: left;
-        width: 25%;
-        }
-        .columnThree {
-        float: center;
-        width: 25%;
-        }
-        .columnTwo {
-        float: left;
-        width: 50%;
-        }
-        .columnSingle {
-        float: left;
-        position: relative;
-        left: 12.5%;
-        width: 75%;
-        }
-    </style>
+       <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
+
    </head>
    <body>
         <div class="row" >
@@ -60,7 +41,7 @@
                     <br><br><br>
                     
                     <h1 class="mkd-section-title mkd-section-title-small" style="text-align: center;margin-bottom: 8px">
-                        {!! __('donar.donaciones')!!}</h1>
+                        {!! __('donar.donacionesa')!!}</h1>
                     <div class="col-md-12">
                             <p style="text-align: center;margin-bottom: 8px">{!! __('donar.si')!!}</p>
                     </div>

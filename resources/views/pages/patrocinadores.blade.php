@@ -9,69 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        .img-box {
-        position: relative;
-        width: 90%;
-        }
-
-        .img-box img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height: auto;
-        }
-
-        .img-box:hover > .overlay {
-        opacity: 0.75;
-        cursor: pointer;  
-        }
-
-        .overlay {
-        position: absolute;
-        margin-left: auto;
-        margin-right: auto;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transition: .5s ease;
-        background-color: #8EA20C;
-        }
-
-        .text {
-        color: white;
-        font-size: 20px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        text-align: center;
-        }
-        .columnFour {
-        float: left;
-        width: 25%;
-        }
-        .columnThree {
-        float: center;
-        width: 25%;
-        }
-        .columnTwo {
-        float: left;
-        width: 50%;
-        }
-        .columnSingle {
-        float: left;
-        position: relative;
-        left: 12.5%;
-        width: 75%;
-        }
-    </style>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
+    
 
 </head>
 <body>

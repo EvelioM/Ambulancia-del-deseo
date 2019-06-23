@@ -1,11 +1,9 @@
 
 <?php 
 return array ( 
-    'donaciones' => 'Donaciones a
-    través de PAYPAL',
+    'donaciones' => 'Donaciones',
     'si' => 'Si quieres usar este método de pago para donar una cantidad a la Fundación, sólo tienes que hacer click en el botón que hay justo debajo del texto. ¡Cualquier ayuda es de agradecer!',
-    'aportacion' => 'Aportación vía
-    transferencia Bancaria',
+    'aportacion' => 'Aportación vía transferencia Bancaria',
     'site' => 'Si te viene mejor realizar una transferencia bancaria a un número de cuenta, te proporcionamos el de la fundación a través de CajaMar.
 
     Todas las aportaciones deberán cumplimentar la documentación que el Ministerio de Hacienda impone para las donaciones que entren por empresas.
@@ -13,7 +11,7 @@ return array (
     Uno de los pilares de la fundación es la transparencia en todos y cada uno de los procesos que llevamos a cabo, tanto económicos como de recursos humanos.<br>
     
     ES58 3058 0295 1127 2006 5099',
-    'donaciones' => 'DONACIONES',
+    'donacionesa' => 'Donaciones a través de PAYPAL',
     'quiero' => 'Quiero colaborar',
     'la' => 'La Fundación Ambulancia del Deseo no podría realizar su función sin la colaboración y aportación económica de las personas, compañías e instituciones que lo avalan. Puede colaborar con nosotros realizando una transferencia a la cuenta bancaria o mediante pago seguro vía PayPal. <br> Si necesitas más&nbsp;información sobre este apartado escríbenos a <a href="mailto:fundacion@ambulanciadeldeseo.es">fundacion@ambulanciadeldeseo.es</a>',
     'ventajas' => 'Ventajas fiscales',

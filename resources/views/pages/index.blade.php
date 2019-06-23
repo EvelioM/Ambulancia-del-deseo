@@ -13,35 +13,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Ambulancia del Deseo</title>
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-
-        <style>
-            .container {
-            width: 200%;
-            }
-            .carousel-caption{
-            top: 50%;
-            transform: translateY(-50%)
-            text-transform: uppercase;
-            }
-            .column {
-            float: left;
-            width: 33.33%;
-            }
-            .columnSingle {
-            float: left;
-            width: 100%;
-            }
-            .columnTwo {
-            float: left;
-            width: 50%;
-            }
-            .row:after {
-            content: "";
-            display: table;
-            clear: both;
-            }
-        </style>
+        
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
+        
     </head>
     <body>
         <div class="container">
