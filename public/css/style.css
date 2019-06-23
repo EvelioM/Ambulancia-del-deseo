@@ -17,7 +17,7 @@
             }
 
             .img-box:hover > .overlay {
-            opacity: 0.75;
+            opacity: 0.90;
             cursor: pointer;  
             }
 
@@ -49,6 +49,7 @@
             .columnFour {
             float: left;
             width: 25%;
+			
             }
             .columnThree {
             float: center;
@@ -78,6 +79,91 @@
             display: table;
             clear: both;
             }
+			
+.media {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+}
+
+.media__image { display: block; }
+
+.media__body {
+  background-color: #8EA20C;
+   position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+  color: white;
+  font-size: 1em;
+  opacity: 0;
+  overflow: hidden;
+  padding: 10em ;
+  text-align: center;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.media__body:hover { opacity: 0.9; }
+
+.media__body:after,
+.media__body:before {
+  
+  
+  
+  bottom: 1em;
+  content: '';
+  left: 1em;
+  opacity: 0;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transition: 0.6s 0.2s;
+  transition: 0.6s 0.2s;
+}
+
+.media__body:before {
+  border-bottom: none;
+  border-top: none;
+  left: 2em;
+  right: 2em;
+}
+
+.media__body:after {
+  border-left: none;
+  border-right: none;
+  bottom: 2em;
+  top: 2em;
+}
+
+.media__body:hover:after,
+.media__body:hover:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.media__body h2 { margin-top: 0; }
+
+
+.media__body p { margin-bottom: 1.5em; }
+		
+			
+	div#text a:link { color: white; }
+	div#text a:visited { color: white; }
+	div#text a:hover { color: white; }
+	div#text a:active { color: white; }	
+
+
 * {
   margin: 0;
   padding: 0;
